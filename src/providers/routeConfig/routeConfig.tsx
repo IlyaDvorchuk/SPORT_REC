@@ -21,8 +21,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.STRUGGLE]: '/struggle',
     [AppRoutes.RATINGS]: '/ratings/',
-    [AppRoutes.COMPETITIONS]: '/competitions',
-    [AppRoutes.ORGANIZATIONS]: '/organizations/',
+    [AppRoutes.COMPETITIONS]: '/competitions.svg',
+    [AppRoutes.ORGANIZATIONS]: '/organizations.svg/',
 }
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {

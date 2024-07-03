@@ -1,0 +1,9 @@
+@import "src/styles/mixins";
+
+.Navbar {
+  @include flex()
+}
+
+.navItem {
+  gap: 1rem;
+}
