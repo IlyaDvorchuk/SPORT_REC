@@ -1,12 +1,21 @@
-import React from 'react';
-import cls from './Header.module.scss'
-
-import LogoSvg from '/src/assets/images/svg/logo.svg'
+import React, {useState} from 'react';
+import i18n from "i18next";
 import { AppBar, Toolbar, Typography, IconButton, Select, MenuItem } from '@mui/material';
+
+import cls from './Header.module.scss'
+import LogoSvg from '/src/assets/images/svg/logo.svg'
 import Container from "../Container/Container";
 import Navbar from "../../navigation/Navbar/Navbar";
+import {LanguageTypes} from "../../../config/i18n/constants";
 
 const Header = () => {
+    const [language, setLanguage] = useState(i18n.language)
+
+    const onChangeLanguage = (language: LanguageTypes.ru | LanguageTypes.en) => {
+        i18n.changeLanguage(language)
+        setLanguage(language)
+    }
+
     return (
         <AppBar position="sticky" className={cls.appBar} color={'inherit'}>
             <Container>
@@ -16,12 +25,16 @@ const Header = () => {
                     </Typography>
                     <Navbar/>
                     <Select
-                        value="RU"
+                        value={language}
                         className={cls.languageSelect}
                         variant="standard"
                     >
-                        <MenuItem value="RU">RU</MenuItem>
-                        <MenuItem value="EN">EN</MenuItem>
+                        <MenuItem value="ru" onClick={() => onChangeLanguage(LanguageTypes.ru)}>
+                            RU
+                        </MenuItem>
+                        <MenuItem value="en" onClick={() => onChangeLanguage(LanguageTypes.en)}>
+                            EN
+                        </MenuItem>
                     </Select>
                     <IconButton color="inherit">
                         {/*<NotificationsIcon />*/}

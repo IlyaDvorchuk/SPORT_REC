@@ -1,7 +1,8 @@
 @import "src/styles/mixins";
 
 .Navbar {
-  @include flex()
+  width: 65rem;
+  @include flex(space-between)
 }
 
 .navItem {
