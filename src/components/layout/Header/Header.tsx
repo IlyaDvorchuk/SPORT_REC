@@ -8,8 +8,11 @@ import Container from "../Container/Container";
 import Navbar from "../../navigation/Navbar/Navbar";
 import {LanguageTypes} from "../../../config/i18n/constants";
 import {Link} from "react-router-dom";
+import {useAppSelector} from "../../../hooks/redux";
 
 const Header = () => {
+    const userData = useAppSelector((state) => state.user);
+
     const [language, setLanguage] = useState(i18n.language)
 
     const onChangeLanguage = (language: LanguageTypes.ru | LanguageTypes.en) => {
@@ -37,9 +40,7 @@ const Header = () => {
                             EN
                         </MenuItem>
                     </Select>
-                    <IconButton color="inherit">
-                        {/*<NotificationsIcon />*/}
-                    </IconButton>
+
                     <div className={cls.rightIcons}>
                         <Link to={'/register'}>
                             <img src={LogoSvg} alt="logo" className={cls.logoImage} />

@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import supabase from "../../services/supabaseClient";
 import Container from "../../components/layout/Container/Container";
 import {Button, TextField, Typography} from "@mui/material";
+import {useAppDispatch} from "../../hooks/redux";
+import userSlice from "../../store/reducers/UserSlice";
 
 const Register: React.FC = () => {
+    const dispatch = useAppDispatch();
+
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState<string | null>(null);
@@ -14,7 +19,7 @@ const Register: React.FC = () => {
         setError(null);
         setSuccess(null);
 
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
             email,
             password,
         });
@@ -22,6 +27,7 @@ const Register: React.FC = () => {
         if (error) {
             setError(error.message);
         } else {
+            dispatch(userSlice.reducers.setUser(data))
             setSuccess('Registration successful! Please check your email to confirm your account.');
         }
     };
