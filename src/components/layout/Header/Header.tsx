@@ -7,6 +7,7 @@ import LogoSvg from '/src/assets/images/svg/logo.svg'
 import Container from "../Container/Container";
 import Navbar from "../../navigation/Navbar/Navbar";
 import {LanguageTypes} from "../../../config/i18n/constants";
+import {Link} from "react-router-dom";
 
 const Header = () => {
     const [language, setLanguage] = useState(i18n.language)
@@ -40,7 +41,10 @@ const Header = () => {
                         {/*<NotificationsIcon />*/}
                     </IconButton>
                     <div className={cls.rightIcons}>
-                        <img src={LogoSvg} alt="logo" className={cls.logoImage} />
+                        <Link to={'/register'}>
+                            <img src={LogoSvg} alt="logo" className={cls.logoImage} />
+
+                        </Link>
                     </div>
                 </Toolbar>
             </Container>

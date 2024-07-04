@@ -4,6 +4,7 @@ import Struggle from "../../pages/struggle/Struggle";
 import Ratings from "../../pages/ratings/Ratings";
 import Сompetitions from "../../pages/competitions/Сompetitions";
 import Organizations from "../../pages/organizations/Organizations";
+import Register from "../../pages/register/Register";
 
 export type AppRoutesProps = RouteProps & {
     isAuth?: boolean
@@ -14,15 +15,17 @@ export enum AppRoutes {
     STRUGGLE = 'struggle',
     RATINGS = 'ratings',
     COMPETITIONS = 'competitions',
-    ORGANIZATIONS = 'organizations'
+    ORGANIZATIONS = 'organizations',
+    REGISTER = 'register',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.STRUGGLE]: '/struggle',
     [AppRoutes.RATINGS]: '/ratings/',
-    [AppRoutes.COMPETITIONS]: '/competitions.svg',
-    [AppRoutes.ORGANIZATIONS]: '/organizations.svg/',
+    [AppRoutes.COMPETITIONS]: '/competitions',
+    [AppRoutes.ORGANIZATIONS]: '/organizations/',
+    [AppRoutes.REGISTER]: '/register'
 }
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
@@ -45,6 +48,10 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.ORGANIZATIONS]: {
         path: RoutePath.organizations,
         element: <Organizations />,
+    },
+    [AppRoutes.REGISTER]: {
+        path: RoutePath.register,
+        element: <Register />,
     },
 }
 
