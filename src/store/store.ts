@@ -2,6 +2,7 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import userSlice from "./reducers/UserSlice";
+import postService from "../services/simpleService";
 
 const persistConfig = {
     key: 'root',
@@ -10,6 +11,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     user: userSlice,
+    [postService.reducerPath]: postService.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -17,6 +19,9 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const setupStore = () => {
     return configureStore({
         reducer: persistedReducer,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware()
+                .concat(postService.middleware)
     });
 }
 
