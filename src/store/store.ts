@@ -20,7 +20,11 @@ const setupStore = () => {
     return configureStore({
         reducer: persistedReducer,
         middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware()
+            getDefaultMiddleware({
+                serializableCheck: {
+                    ignoredActions: ['persist/PERSIST'],
+                },
+            })
                 .concat(postService.middleware)
     });
 }

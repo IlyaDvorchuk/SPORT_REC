@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import i18n from "i18next";
-import { AppBar, Toolbar, Typography, IconButton, Select, MenuItem } from '@mui/material';
+import {AppBar, Toolbar, Select, MenuItem, Typography} from '@mui/material';
 
 import cls from './Header.module.scss'
 import LogoSvg from '/src/assets/images/svg/logo.svg'
+import UserSvg from '/src/assets/images/svg/user.svg'
 import Container from "../Container/Container";
 import Navbar from "../../navigation/Navbar/Navbar";
 import {LanguageTypes} from "../../../config/i18n/constants";
@@ -19,7 +20,6 @@ const Header = () => {
         i18n.changeLanguage(language)
         setLanguage(language)
     }
-
     return (
         <AppBar position="sticky" className={cls.appBar} color={'inherit'}>
             <Container>
@@ -42,10 +42,10 @@ const Header = () => {
                     </Select>
 
                     <div className={cls.rightIcons}>
-                        <Link to={'/register'}>
+                        {userData.user ? <Link to={'/register'}>
                             <img src={LogoSvg} alt="logo" className={cls.logoImage} />
-
-                        </Link>
+                        </Link> :
+                            <img src={UserSvg} alt="logo" className={cls.logoImage} />}
                     </div>
                 </Toolbar>
             </Container>
