@@ -1,10 +1,10 @@
 import {RouteProps} from "react-router-dom";
-import Main from "../../pages/main/Main";
+import Main from "../../pages/main/MainAsync";
 import Struggle from "../../pages/struggle/Struggle";
 import Ratings from "../../pages/ratings/Ratings";
 import Сompetitions from "../../pages/competitions/Сompetitions";
 import Organizations from "../../pages/organizations/Organizations";
-import Register from "../../pages/register/Register";
+import Register from "../../pages/register/RegisterAsync";
 
 export type AppRoutesProps = RouteProps & {
     isAuth?: boolean
