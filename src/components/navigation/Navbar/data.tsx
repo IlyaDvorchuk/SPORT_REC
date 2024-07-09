@@ -1,5 +1,3 @@
-import {RoutePath} from "../../../providers/routeConfig/routeConfig";
-
 import struggleSvg from '/src/assets/images/svg/navbar/struggle.svg'
 import ratingsSvg from '/src/assets/images/svg/navbar/ratings.svg'
 import competitionsSvg from '/src/assets/images/svg/navbar/competitions.svg'

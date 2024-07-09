@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import i18n from "i18next";
 import {AppBar, Toolbar, Select, MenuItem, Typography} from '@mui/material';
 

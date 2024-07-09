@@ -1,4 +1,3 @@
-import React from 'react';
 import cls from './Navbar.module.scss'
 import {navItems} from "./data";
 import {MenuItem} from "@mui/material";
