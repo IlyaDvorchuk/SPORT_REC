@@ -18,7 +18,7 @@ i18n
             escapeValue: false, // not needed for react as it escapes by default
         },
         backend : {
-            loadPath: 'public/locales/{{lng}}/{{ns}}.json'
+            loadPath: '/locales/{{lng}}/{{ns}}.json'
         },
         ns: ['main'],
         defaultNS: 'main', // неймспейс по умолчанию для страницы настроек
