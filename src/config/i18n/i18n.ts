@@ -4,6 +4,9 @@ import HttpApi from 'i18next-http-backend';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/sport-rec' : '/public';
+
 i18n
     .use(HttpApi)
     .use(Backend)
@@ -18,7 +21,7 @@ i18n
             escapeValue: false, // not needed for react as it escapes by default
         },
         backend : {
-            loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}/{{ns}}.json`
+            loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`
         },
         ns: ['main'],
         defaultNS: 'main', // неймспейс по умолчанию для страницы настроек
