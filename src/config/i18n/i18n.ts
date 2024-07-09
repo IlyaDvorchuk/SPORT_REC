@@ -18,10 +18,10 @@ i18n
             escapeValue: false, // not needed for react as it escapes by default
         },
         backend : {
-            loadPath: '/locales/{{lng}}/{{ns}}.json'
+            loadPath: 'public/locales/{{lng}}/{{ns}}.json'
         },
         ns: ['main'],
-        defaultNS: 'settings', // неймспейс по умолчанию для страницы настроек
+        defaultNS: 'main', // неймспейс по умолчанию для страницы настроек
         react: {
             useSuspense: false,
         },
