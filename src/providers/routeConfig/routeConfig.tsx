@@ -20,12 +20,12 @@ export enum AppRoutes {
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.STRUGGLE]: '/struggle',
-    [AppRoutes.RATINGS]: '/ratings/',
-    [AppRoutes.COMPETITIONS]: '/competitions',
-    [AppRoutes.ORGANIZATIONS]: '/organizations/',
-    [AppRoutes.REGISTER]: '/register'
+    [AppRoutes.MAIN]: '/sport-rec/',
+    [AppRoutes.STRUGGLE]: '/sport-rec/struggle',
+    [AppRoutes.RATINGS]: '/sport-rec/ratings/',
+    [AppRoutes.COMPETITIONS]: '/sport-rec/competitions',
+    [AppRoutes.ORGANIZATIONS]: '/sport-rec/organizations/',
+    [AppRoutes.REGISTER]: '/sport-rec/register'
 }
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
