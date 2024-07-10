@@ -5,7 +5,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/sport-rec' : '/public';
+const basePath = isProduction ? '/sport-rec' : '/sport-rec/public';
 
 i18n
     .use(HttpApi)
