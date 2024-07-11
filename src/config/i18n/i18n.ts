@@ -4,6 +4,9 @@ import HttpApi from 'i18next-http-backend';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/sport-rec' : '/sport-rec/public';
+
 i18n
     .use(HttpApi)
     .use(Backend)
@@ -11,17 +14,20 @@ i18n
     .use(initReactI18next)
     // init i18next
     .init({
-        fallbackLng: 'en',
+        fallbackLng: {
+            'ru-RU': ['ru'],
+            'default': ['en']
+        },
         debug: true,
 
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
         backend : {
-            loadPath: 'src/assets/locales/{{lng}}/{{ns}}.json'
+            loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`
         },
         ns: ['main'],
-        defaultNS: 'settings', // неймспейс по умолчанию для страницы настроек
+        defaultNS: 'main', // неймспейс по умолчанию для страницы настроек
         react: {
             useSuspense: false,
         },
