@@ -2,9 +2,22 @@
 
 .Navbar {
   width: 65rem;
-  @include flex(space-between)
+  @include flex(space-between);
+
+  @media screen and (max-width: 920px){
+    width: 100%;
+  }
+
+  @media screen and (max-width: 760px){
+    display: none;
+  }
+
 }
 
 .navItem {
   gap: 1rem;
+
+  @media screen and (max-width: 800px){
+    gap: .2rem;
+  }
 }

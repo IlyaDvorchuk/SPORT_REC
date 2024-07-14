@@ -1,0 +1,29 @@
+@import "src/styles/variables";
+
+.card {
+  max-width: 37.1rem;
+  padding: 2.8rem 2.4rem 2.8rem 2.4rem;
+  background-color: $backgroundColor1;
+  border-radius: 20px;
+
+  @media screen and (max-width: 1000px){
+    max-width: 100%;
+    width: 85%;
+  }
+}
+
+.rating {
+  background-color: $backgroundText;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+}
+
+.subtitle {
+  text-align: left;
+
+  & > p {
+    color: $textColorAdditional;
+    line-height: 18px;
+    font-size: 1.2rem;
+  }
+}

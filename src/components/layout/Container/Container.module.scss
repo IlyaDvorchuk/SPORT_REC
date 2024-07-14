@@ -1,5 +1,13 @@
+@import "src/styles/mixins";
+
 .Container {
   max-width: 116rem;
   width: 100%;
   margin: 0 auto;
+  padding: 1rem;
+  @include flex(center, null, 2.4rem);
+
+  @media screen and (max-width: 1000px){
+    flex-wrap: wrap;
+  }
 }

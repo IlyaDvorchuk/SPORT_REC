@@ -3,6 +3,7 @@ import Header from "../../components/layout/Header/Header";
 import PostsComponent from "../../components/layout/Post/Post";
 import Container from "../../components/layout/Container/Container";
 import OrganizationHeadCard from "../../components/layout/OrganizationHeadCard/OrganizationHeadCard";
+import RatingCard from "../../components/layout/RatingCard/RatingCard";
 
 const Main = () => {
     return (
@@ -10,6 +11,7 @@ const Main = () => {
             <Header/>
             <Container>
                 <OrganizationHeadCard/>
+                <RatingCard/>
             </Container>
             <PostsComponent/>
 

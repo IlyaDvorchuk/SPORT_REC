@@ -7,6 +7,10 @@
   overflow: hidden;
   background: $backgroundColor1;
 
+  @media screen and (max-width: 1000px){
+    max-width: 100%;
+    width: 90%;
+  }
 }
 
 .cardBackground {
@@ -60,6 +64,8 @@
 .additionalInfo {
   margin-bottom: 1.6rem;
   @include flex(null, center, 1.5rem);
+  row-gap: .5rem;
+  flex-wrap: wrap;
   font-size: 1.4rem;
   font-weight: 500;
   color: $textColor2;
@@ -89,6 +95,8 @@
   position: relative;
   @include flex();
 
+
+
   & > .team {
     position: absolute;
   }
@@ -100,6 +108,10 @@
   font-weight: 500;
   font-size: 1.4rem;
   color: $textColor2;
+
+  @media screen and (max-width: 470px){
+    flex-wrap: wrap;
+  }
 
   & .count {
     color: $textColor1;
