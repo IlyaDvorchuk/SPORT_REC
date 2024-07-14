@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useGetPostsQuery } from '/src/services/simpleService';
 
+
 const PostsComponent= () => {
     const { data: posts, error, isLoading, isSuccess } = useGetPostsQuery();
 
     useEffect(() => {
         if (isSuccess) {
-            console.log('Posts loaded:', posts);
+            // console.log('Posts loaded:', posts);
         }
     }, [isSuccess, posts]);
 

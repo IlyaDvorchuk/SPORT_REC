@@ -1,9 +1,12 @@
 @import "src/styles/variables";
+@import "src/styles/mixins";
 
 .card {
   max-width: 76.5rem;
   border-radius: 2rem;
   overflow: hidden;
+  background: $backgroundColor1;
+
 }
 
 .cardBackground {
@@ -13,12 +16,100 @@
 
 .cardBody {
   position: relative;
-  bottom: 3rem;
+  bottom: 5rem;
   padding: 0 3rem 0 2rem;
-  background: $backgroundColor1;
 }
 
-.avatar {
+.cardHeader {
+  margin-bottom: 1.3rem;
+  @include flex(space-between, flex-end);
   position: relative;
-  bottom: 5rem;
+}
+
+.avatarContainer {
+  position: relative;
+  width: 14rem;
+
+  & .flagImg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.topPlace {
+  margin-bottom: 2.4rem;
+  padding: 1.2rem 1.4rem;
+  background: $backgroundText;
+  border-radius: 11px;
+  color: $textColorAdditional;
+  font-size: 1.6rem;
+  font-weight: 600;
+  @include flex(center, center, .9rem)
+}
+
+.titleContainer {
+  margin-bottom: 1.6rem;
+  @include flex(null, center, 0.8rem);
+}
+
+.title {
+  text-align: left;
+}
+
+.additionalInfo {
+  margin-bottom: 1.6rem;
+  @include flex(null, center, 1.5rem);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: $textColor2;
+
+  & > .sportItem {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -8.5px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: $backgroundAdditional;
+    }
+  }
+}
+
+.region {
+  @include flex(null, center, 0.4rem);
+}
+
+.teams {
+  width: 5.2rem;
+  position: relative;
+  @include flex();
+
+  & > .team {
+    position: absolute;
+  }
+}
+
+.countInfo {
+  margin-bottom: 2.8rem;
+  @include flex(null, flex-start, .8rem);
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: $textColor2;
+
+  & .count {
+    color: $textColor1;
+  }
+}
+
+.buttons {
+  @include flex(null, flex-start, .8rem);
+}
+
+.buttonDark {
+  background-color: $textColor1;
 }
