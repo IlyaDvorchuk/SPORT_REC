@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .card {
   max-width: 76.5rem;
   border-radius: 2rem;
@@ -7,4 +9,16 @@
 .cardBackground {
   height: 17rem;
   background: linear-gradient(180deg, #330000 0%, #830B00 100%);
+}
+
+.cardBody {
+  position: relative;
+  bottom: 3rem;
+  padding: 0 3rem 0 2rem;
+  background: $backgroundColor1;
+}
+
+.avatar {
+  position: relative;
+  bottom: 5rem;
 }
